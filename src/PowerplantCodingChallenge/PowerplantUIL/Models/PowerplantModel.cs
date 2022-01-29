@@ -9,7 +9,7 @@ public class PowerplantModel
     public string Name { get; set; }
 
     [Required]
-    public PowerplantType Type { get; set; }
+    public string Type { get; set; }
 
     [Required]
     public double Efficiency { get; set; }
@@ -19,4 +19,15 @@ public class PowerplantModel
 
     [Required]
     public int PMax { get; set; }
+
+    public PowerplantModel() {}
+
+    public PowerplantModel(string name, string type, double efficiency, int pMin, int pMax)
+    {
+        Name = name;
+        Type = type;
+        Efficiency = efficiency;
+        PMin = pMin;
+        PMax = pMax;
+    }
 }

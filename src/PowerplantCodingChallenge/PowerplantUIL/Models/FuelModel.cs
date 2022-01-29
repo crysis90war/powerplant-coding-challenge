@@ -20,4 +20,24 @@ public class FuelModel
     [JsonPropertyName("wind(%)")]
     [Required]
     public double Wind { get; set; }
+
+    /// <summary>
+    /// Default constructor.
+    /// </summary>
+    public FuelModel() {}
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="gas"></param>
+    /// <param name="kerosine"></param>
+    /// <param name="co2"></param>
+    /// <param name="wind"></param>
+    public FuelModel(double gas, double kerosine, double co2, double wind)
+    {
+        Gas = gas;
+        Kerosine = kerosine;
+        Co2 = co2;
+        Wind = wind;
+    }
 }

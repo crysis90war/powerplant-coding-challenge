@@ -2,6 +2,7 @@
 using UIL = PowerplantUIL.Enums;
 using BLL = PowerplanBLL.Enums;
 using PowerplantUIL.Models;
+using PowerplantUIL.Extensions;
 
 namespace PowerplantUIL.Mappers;
 
@@ -59,7 +60,7 @@ internal static class Mapper
     internal static PowerplantModel ToUil(this PowerplantEntity entity) => new()
     {
         Name = entity.Name,
-        Type = (UIL.PowerplantType)entity.Type,
+        Type = entity.Type.GetString(),
         Efficiency = entity.Efficiency,
         PMin = entity.PMin,
         PMax = entity.PMax
@@ -68,7 +69,7 @@ internal static class Mapper
     internal static PowerplantEntity ToBll(this PowerplantModel model) => new()
     {
         Name = model.Name,
-        Type = (BLL.PowerplantType)model.Type,
+        Type = model.Type.GetEnumType(),
         Efficiency = model.Efficiency,
         PMin = model.PMin,
         PMax = model.PMax

@@ -1,4 +1,4 @@
-﻿namespace PowerplanBLL.Extensions;
+﻿namespace PowerplantUIL.Extensions;
 
 public static class ListExtension
 {
