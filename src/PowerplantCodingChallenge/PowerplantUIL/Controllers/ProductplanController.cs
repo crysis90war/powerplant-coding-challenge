@@ -20,9 +20,17 @@ public class ProductplanController : ControllerBase
     [HttpPost]
     public IActionResult Post([FromBody] PayloadModel form)
     {
-        form = Faker.GetFirstPayload();
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+        try
+        {
+            // form = Faker.GetPayload(1);
 
-        IEnumerable<ResultModel> results = _productionplanService.MeritOrderOfPowerplants(form.ToBll()).Select(x => x.ToUil());
-        return Ok(results);
+            IEnumerable<ResultModel> results = _productionplanService.MeritOrderOfPowerplants(form.ToBll()).Select(x => x.ToUil());
+            return Ok(results);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 }

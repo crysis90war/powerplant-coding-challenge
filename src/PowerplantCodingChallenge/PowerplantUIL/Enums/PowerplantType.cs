@@ -2,7 +2,7 @@
 
 public enum PowerplantType
 {
-    Turbojet,
+    Turbojet = 1,
     Gasfired,
     Windturbine
 }
