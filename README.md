@@ -35,7 +35,7 @@ Make sure the image is running.
   Run the following command.
   
   ```bash
-    curl -X POST -H "Content-Type: application/json" -d @"../../example_payloads/payload1.json" http://localhost:8888/api/productionplan -o result.json
+    curl -X POST -H "Content-Type: application/json" -d @"../../example_payloads/payload1.json" http://localhost:8888/api/productionplan -o ../result.json
   ```
   Open, result.json file
 
