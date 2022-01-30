@@ -37,13 +37,16 @@ Enjoy.
 Make sure the image is running.
 
 **5a. Option A. Run the cUrl command line**
+
   Run the following command.
   
   ```bash
     curl -X POST -H "Content-Type: application/json" -d @"../../example_payloads/payload1.json" http://localhost:8888/api/productionplan -o ../result.json
   ```
+
   Open, result.json file
 
 **5b.Option B. Open index.html**
+
   - Open the file 2 times side by side,
   - Choose a payload and submit.
