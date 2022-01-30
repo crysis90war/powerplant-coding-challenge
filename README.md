@@ -33,10 +33,14 @@ Please follow step by step every steps in order to lunch it correctly.
     cd ../..
   ```
 
-#### NB: In order to test, you have 2 options. A or B
+### NB: In order to test, you have 2 options. A or B
 
 **6a. Let go back to the main folder**
   ```bash
     curl -X POST -H "Content-Type: application/json" -d @"example_payloads/payload1.json" http://localhost:8888/api/productionplan -o result.json
   ```
 
+**6b. Open index.html**
+  - Make sure the image is running.
+  - Open 2x the index.html file.
+  - Choose a payload and submit.
