@@ -5,6 +5,11 @@ namespace PowerplanBLL.Services;
 
 public class ProductionplanService : IProductionplanService
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="payload"></param>
+    /// <returns></returns>
     public IEnumerable<ResultEntity> MeritOrderOfPowerplants(PayloadEntity payload)
     {
         List<ResultEntity> output = new();

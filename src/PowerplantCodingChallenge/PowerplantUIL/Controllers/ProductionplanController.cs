@@ -8,11 +8,11 @@ namespace PowerplantUIL.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ProductplanController : ControllerBase
+public class ProductionplanController : ControllerBase
 {
     private readonly IProductionplanService _productionplanService;
 
-    public ProductplanController(IProductionplanService productionplanService)
+    public ProductionplanController(IProductionplanService productionplanService)
     {
         _productionplanService = productionplanService;
     }
