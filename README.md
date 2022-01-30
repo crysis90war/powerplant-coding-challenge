@@ -28,19 +28,17 @@ Please follow step by step every steps in order to lunch it correctly.
     docker run --rm -d --name Powerplant -p 8888:80/tcp powerplant:latest
   ```
 
-**5. Let go back to the main folder**
-  ```bash
-    cd ../..
-  ```
-
 ### NB: In order to test, you have 2 options. A or B
+Make sure the image is running.
 
-**6a. Let go back to the main folder**
+**5a. Option A, run the cUrl command line**
+  Run the following command.
+  
   ```bash
-    curl -X POST -H "Content-Type: application/json" -d @"example_payloads/payload1.json" http://localhost:8888/api/productionplan -o result.json
+    curl -X POST -H "Content-Type: application/json" -d @"../../example_payloads/payload1.json" http://localhost:8888/api/productionplan -o result.json
   ```
+  Open, result.json file
 
-**6b. Open index.html**
-  - Make sure the image is running.
+**5b. Open index.html**
   - Open 2x the index.html file.
   - Choose a payload and submit.
