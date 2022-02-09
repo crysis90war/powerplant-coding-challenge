@@ -10,7 +10,7 @@ You have to follow all the steps listed below.
 **1. Clone the repository**
 
   ```bash
-    git clone -b crysis90war https://github.com/crysis90war/powerplant-coding-challenge.git
+    git clone https://github.com/crysis90war/powerplant-coding-challenge.git
   ```
 
 **2. Go to the folder PowerplantCodingChallenge**
