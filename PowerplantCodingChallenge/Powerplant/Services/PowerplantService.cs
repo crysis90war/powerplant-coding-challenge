@@ -19,7 +19,10 @@ namespace Powerplant.Services
 
                 PowerplantModel nextPowerPlant = index + 1 >= powerPlants.Count ? null : powerPlants[index + 1];
 
-                ResultModel result = new ResultModel() { Name = powerPlant.Name };
+                ResultModel result = new ResultModel()
+                {
+                    Name = powerPlant.Name
+                };
 
                 double pMinOutput = powerPlant.GetMinPower(payload.Fuels);
 
