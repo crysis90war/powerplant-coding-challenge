@@ -19,6 +19,8 @@ namespace Powerplant.Services
 
                 PowerplantModel nextPowerPlant = index + 1 >= powerPlants.Count ? null : powerPlants[index + 1];
 
+                ResultModel result = new ResultModel() { Name = powerPlant.Name };
+
                 double pMinOutput = powerPlant.GetMinPower(payload.Fuels);
 
                 double pMaxOutput = powerPlant.GetMaxPower(payload.Fuels);
@@ -37,32 +39,20 @@ namespace Powerplant.Services
 
                         if (listContainsLeftLoadAfterSubstraction && !listContainsLeftLoad)
                         {
-                            output.Add(new ResultModel()
-                            {
-                                Name = powerPlant.Name,
-                                P = (int)Math.Round(pMaxOutput)
-                            });
+                            result.P = (int)Math.Round(pMaxOutput);
 
                             leftLoad -= (int)Math.Round(pMaxOutput);
                         }
                         else
                         {
-                            output.Add(new ResultModel()
-                            {
-                                Name = powerPlant.Name,
-                                P = 0
-                            });
+                            result.P = 0;
                         }
                     }
                     else
                     {
                         double temp = leftLoad - nextPMinOutput;
 
-                        output.Add(new ResultModel()
-                        {
-                            Name = powerPlant.Name,
-                            P = (int)Math.Round(temp)
-                        });
+                        result.P = (int)Math.Round(temp);
 
                         leftLoad -= temp;
                     }
@@ -71,33 +61,23 @@ namespace Powerplant.Services
                 {
                     if (leftLoad - pMaxOutput > 0)
                     {
-                        output.Add(new ResultModel()
-                        {
-                            Name = powerPlant.Name,
-                            P = (int)Math.Round(pMaxOutput)
-                        });
+                        result.P = (int)Math.Round(pMaxOutput);
 
                         leftLoad -= pMaxOutput;
                     }
                     else
                     {
-                        output.Add(new ResultModel()
-                        {
-                            Name = powerPlant.Name,
-                            P = (int)Math.Round(leftLoad)
-                        });
+                        result.P = (int)Math.Round(leftLoad);
 
                         leftLoad -= leftLoad;
                     }
                 }
                 else
                 {
-                    output.Add(new ResultModel()
-                    {
-                        Name = powerPlant.Name,
-                        P = 0
-                    });
+                    result.P = 0;
                 }
+
+                output.Add(result);
             }
 
             return output;

@@ -53,7 +53,7 @@ namespace Powerplant.Models
         }
 
         /// <summary>
-        /// Calculates and returns the price per MWh of current powerplant based on its type
+        /// Calculates and returns the price per MWh of current powerplant based on its type.
         /// </summary>
         /// <param name="fuel">Input <see cref="FuelModel"/></param>
         /// <returns>Calculated price in decimal</returns>
@@ -70,9 +70,9 @@ namespace Powerplant.Models
         }
 
         /// <summary>
-        /// Get the minimum power of the actual power plant.
+        /// Get the minimum power of the current powerplant.
         /// </summary>
-        /// <param name="fuel">Input <see cref="FuelEntity"/>, null by default</param>
+        /// <param name="fuel">Input <see cref="FuelModel"/>, null by default</param>
         /// <returns>
         /// Returns minimal available power of current powerplant.
         /// If the current powerplant is <see cref="PowerplantType.Windturbine"/>, it will return windturbine's actual produced power.
