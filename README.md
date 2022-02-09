@@ -47,7 +47,7 @@ Make sure the image is running.
 
 **5b.Option B. Open index.html**
 
-    if you want to test SignalR to see that all connected clients receive the result once payload submitted.
+if you want to test SignalR to see that all connected clients receive the result once payload submitted.
 
   - Open the file "index.html" 2 times side by side,
   - Choose a payload and submit.
