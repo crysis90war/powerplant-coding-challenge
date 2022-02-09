@@ -3,8 +3,7 @@
 ## Getting Started
 
 In order to be able to properly test my solution.
-You must follow all the steps listed below.
-Enjoy.
+You have to follow all the steps listed below.
 
 ## Steps
 
@@ -17,13 +16,13 @@ Enjoy.
 **2. Go to the folder PowerplantCodingChallenge**
 
   ```bash
-    cd powerplant-coding-challenge/src/PowerplantCodingChallenge/
+    cd powerplant-coding-challenge/PowerplantCodingChallenge/
   ```
 
 **3. Build the docker image of the solution**
 
   ```bash
-    docker build -f ".\PowerplantUIL\Dockerfile" --force-rm -t powerplant:latest .
+    docker build -f ".\Powerplant\Dockerfile" --force-rm -t powerplant:latest .
   ```
 
 **4. Run the image as a container on port 8888**
@@ -41,10 +40,10 @@ Make sure the image is running.
   Run the following command.
   
   ```bash
-    curl -X POST -H "Content-Type: application/json" -d @"../../example_payloads/payload1.json" http://localhost:8888/api/productionplan -o ../result.json
+    curl -X POST -H "Content-Type: application/json" -d @"../example_payloads/payload1.json" http://localhost:8888/api/productionplan -o ../response.json
   ```
 
-  Open, result.json file
+  Open, response.json file
 
 **5b.Option B. Open index.html**
 
