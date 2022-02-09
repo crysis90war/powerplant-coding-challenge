@@ -1,5 +1,5 @@
-﻿using Powerplant.Enums;
-using Powerplant.Extensions;
+﻿using Powerplant.Extensions;
+using Powerplant.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace Powerplant.Models

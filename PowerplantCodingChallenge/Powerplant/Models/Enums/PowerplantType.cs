@@ -1,4 +1,4 @@
-﻿namespace Powerplant.Enums
+﻿namespace Powerplant.Models.Enums
 {
     public enum PowerplantType
     {

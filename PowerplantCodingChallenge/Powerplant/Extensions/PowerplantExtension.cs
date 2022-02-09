@@ -1,4 +1,5 @@
-﻿using Powerplant.Enums;
+﻿
+using Powerplant.Models.Enums;
 
 namespace Powerplant.Extensions
 {
