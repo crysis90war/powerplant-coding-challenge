@@ -28,44 +28,56 @@ namespace Powerplant.Fakers
                             Wind = 60
                         },
                         Powerplants = new List<PowerplantModel>()
-                    {
-                        new(
-                            "gasfiredbig1",
-                            "gasfired",
-                            0.53,
-                            100,
-                            460),
-                        new(
-                            "gasfiredbig2",
-                            "gasfired",
-                            0.53,
-                            100,
-                            460),
-                        new(
-                            "gasfiredsomewhatsmaller",
-                            "gasfired",
-                            0.37,
-                            40,
-                            210),
-                        new(
-                            "tj1",
-                            "turbojet",
-                            0.3,
-                            0,
-                            16),
-                        new(
-                            "windpark1",
-                            "windturbine",
-                            1,
-                            0,
-                            150),
-                        new(
-                            "windpark2",
-                            "windturbine",
-                            1,
-                            0,
-                            36)
-                    }
+                        {
+                            new PowerplantModel()
+                            {
+                                Name = "gasfiredbig1",
+                                Type = "gasfired",
+                                Efficiency = 0.53,
+                                PMin = 100,
+                                PMax = 460,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "gasfiredbig2",
+                                Type = "gasfired",
+                                Efficiency = 0.53,
+                                PMin = 100,
+                                PMax = 460,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "gasfiredsomewhatsmaller",
+                                Type = "gasfired",
+                                Efficiency = 0.37,
+                                PMin = 40,
+                                PMax = 210,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "tj1",
+                                Type = "turbojet",
+                                Efficiency = 0.3,
+                                PMin = 0,
+                                PMax = 16,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "windpark1",
+                                Type = "windturbine",
+                                Efficiency = 1,
+                                PMin = 0,
+                                PMax = 150,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "windpark2",
+                                Type = "windturbine",
+                                Efficiency = 1,
+                                PMin = 0,
+                                PMax = 36,
+                            }
+                        }
                     }
                 },
                 {
@@ -82,44 +94,56 @@ namespace Powerplant.Fakers
                             Wind = 0
                         },
                         Powerplants = new List<PowerplantModel>()
-                    {
-                        new(
-                            "gasfiredbig1",
-                            "gasfired",
-                            0.53,
-                            100,
-                            460),
-                        new(
-                            "gasfiredbig2",
-                            "gasfired",
-                            0.53,
-                            100,
-                            460),
-                        new(
-                            "gasfiredsomewhatsmaller",
-                            "gasfired",
-                            0.37,
-                            40,
-                            210),
-                        new(
-                            "tj1",
-                            "turbojet",
-                            0.3,
-                            0,
-                            16),
-                        new(
-                            "windpark1",
-                            "windturbine",
-                            1,
-                            0,
-                            150),
-                        new(
-                            "windpark2",
-                            "windturbine",
-                            1,
-                            0,
-                            36)
-                    }
+                        {
+                            new PowerplantModel()
+                            {
+                                Name = "gasfiredbig1",
+                                Type = "gasfired",
+                                Efficiency = 0.53,
+                                PMin = 100,
+                                PMax = 460,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "gasfiredbig2",
+                                Type = "gasfired",
+                                Efficiency = 0.53,
+                                PMin = 100,
+                                PMax = 460,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "gasfiredsomewhatsmaller",
+                                Type = "gasfired",
+                                Efficiency = 0.37,
+                                PMin = 40,
+                                PMax = 210,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "tj1",
+                                Type = "turbojet",
+                                Efficiency = 0.3,
+                                PMin = 0,
+                                PMax = 16,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "windpark1",
+                                Type = "windturbine",
+                                Efficiency = 1,
+                                PMin = 0,
+                                PMax = 150,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "windpark2",
+                                Type = "windturbine",
+                                Efficiency = 1,
+                                PMin = 0,
+                                PMax = 36,
+                            }
+                        }
                     }
                 },
                 {
@@ -136,44 +160,56 @@ namespace Powerplant.Fakers
                             Wind = 60
                         },
                         Powerplants = new List<PowerplantModel>()
-                    {
-                        new(
-                            "gasfiredbig1",
-                            "gasfired",
-                            0.53,
-                            100,
-                            460),
-                        new(
-                            "gasfiredbig2",
-                            "gasfired",
-                            0.53,
-                            100,
-                            460),
-                        new(
-                            "gasfiredsomewhatsmaller",
-                            "gasfired",
-                            0.37,
-                            40,
-                            210),
-                        new(
-                            "tj1",
-                            "turbojet",
-                            0.3,
-                            0,
-                            16),
-                        new(
-                            "windpark1",
-                            "windturbine",
-                            1,
-                            0,
-                            150),
-                        new(
-                            "windpark2",
-                            "windturbine",
-                            1,
-                            0,
-                            36)
-                    }
+                        {
+                            new PowerplantModel()
+                            {
+                                Name = "gasfiredbig1",
+                                Type = "gasfired",
+                                Efficiency = 0.53,
+                                PMin = 100,
+                                PMax = 460,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "gasfiredbig2",
+                                Type = "gasfired",
+                                Efficiency = 0.53,
+                                PMin = 100,
+                                PMax = 460,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "gasfiredsomewhatsmaller",
+                                Type = "gasfired",
+                                Efficiency = 0.37,
+                                PMin = 40,
+                                PMax = 210,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "tj1",
+                                Type = "turbojet",
+                                Efficiency = 0.3,
+                                PMin = 0,
+                                PMax = 16,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "windpark1",
+                                Type = "windturbine",
+                                Efficiency = 1,
+                                PMin = 0,
+                                PMax = 150,
+                            },
+                            new PowerplantModel()
+                            {
+                                Name = "windpark2",
+                                Type = "windturbine",
+                                Efficiency = 1,
+                                PMin = 0,
+                                PMax = 36,
+                            }
+                        }
                     }
                 }
             };

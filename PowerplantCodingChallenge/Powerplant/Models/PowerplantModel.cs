@@ -22,28 +22,6 @@ namespace Powerplant.Models
         public int PMax { get; set; }
 
         /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public PowerplantModel() { }
-
-        /// <summary>
-        /// Specific constructor.
-        /// </summary>
-        /// <param name="name">The name of powerplant.</param>
-        /// <param name="type">The type of powerplant.</param>
-        /// <param name="efficiency">The efficienct of the powerplant.</param>
-        /// <param name="pMin">The minimal produced power.</param>
-        /// <param name="pMax">Maximal available power of the powerplant.</param>
-        public PowerplantModel(string name, string type, double efficiency, int pMin, int pMax)
-        {
-            Name = name;
-            Type = type;
-            Efficiency = efficiency;
-            PMin = pMin;
-            PMax = pMax;
-        }
-
-        /// <summary>
         /// Verifies if the current powerplant is type of <see cref="PowerplantType.Windturbine"/>.
         /// </summary>
         /// <returns>Return true else false</returns>
