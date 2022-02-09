@@ -6,12 +6,12 @@ namespace Powerplant.Fakers
     public static class Faker
     {
         /// <summary>
-        /// Returns a preset of <see cref="PayloadModel"/>
+        /// Pick up an existing set of payload for test purpose.
         /// </summary>
         /// <param name="key">Integer key value</param>
-        /// <returns><see cref="PayloadModel"/></returns>
+        /// <returns><see cref="PayloadModel"/>Return select payload</returns>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        internal static PayloadForm GetPayload(int key)
+        public static PayloadForm GetPayload(int key)
         {
             Dictionary<int, PayloadForm> payload = new()
             {
@@ -20,11 +20,13 @@ namespace Powerplant.Fakers
                     new()
                     {
                         Load = 480,
-                        Fuels = new(
-                            13.4,
-                            50.8,
-                            20,
-                            60),
+                        Fuels = new FuelModel()
+                        {
+                            Gas = 13.4,
+                            Kerosine = 50.8,
+                            Co2 = 20,
+                            Wind = 60
+                        },
                         Powerplants = new List<PowerplantModel>()
                     {
                         new(
@@ -72,11 +74,13 @@ namespace Powerplant.Fakers
                     {
 
                         Load = 480,
-                        Fuels = new(
-                            13.4,
-                            50.8,
-                            20,
-                            0),
+                        Fuels = new FuelModel()
+                        {
+                            Gas = 13.4,
+                            Kerosine = 50.8,
+                            Co2 = 20,
+                            Wind = 0
+                        },
                         Powerplants = new List<PowerplantModel>()
                     {
                         new(
@@ -124,11 +128,13 @@ namespace Powerplant.Fakers
                     {
 
                         Load = 910,
-                        Fuels = new(
-                            13.4,
-                            50.8,
-                            20,
-                            60),
+                        Fuels = new FuelModel()
+                        {
+                            Gas = 13.4,
+                            Kerosine = 50.8,
+                            Co2 = 20,
+                            Wind = 60
+                        },
                         Powerplants = new List<PowerplantModel>()
                     {
                         new(

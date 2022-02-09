@@ -20,18 +20,5 @@ namespace Powerplant.Models
         [Required]
         [JsonPropertyName("wind(%)")]
         public double Wind { get; set; }
-
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public FuelModel() { }
-
-        public FuelModel(double gas, double kerosine, double co2, double wind)
-        {
-            Gas = gas;
-            Kerosine = kerosine;
-            Co2 = co2;
-            Wind = wind;
-        }
     }
 }

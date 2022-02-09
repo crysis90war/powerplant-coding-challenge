@@ -15,7 +15,7 @@ namespace Powerplant.Models.Forms
         public IEnumerable<PowerplantModel> Powerplants { get; set; }
 
         /// <summary>
-        /// Sorts the elements of <see cref="PayloadEntity.Powerplants"/> in descending order according to <see cref="PowerplantEntity.PMax"/>,
+        /// Sorts the elements of <see cref="PayloadForm.Powerplants"/> in descending order according to <see cref="PayloadForm.PMax"/>,
         /// then in ascending according to the calculated price of MWh.
         /// </summary>
         /// <returns>Returns a list of powerplants whose elements are sorted.</returns>

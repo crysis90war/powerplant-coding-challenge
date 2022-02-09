@@ -26,6 +26,14 @@ namespace Powerplant.Models
         /// </summary>
         public PowerplantModel() { }
 
+        /// <summary>
+        /// Specific constructor.
+        /// </summary>
+        /// <param name="name">The name of powerplant.</param>
+        /// <param name="type">The type of powerplant.</param>
+        /// <param name="efficiency">The efficienct of the powerplant.</param>
+        /// <param name="pMin">The minimal produced power.</param>
+        /// <param name="pMax">Maximal available power of the powerplant.</param>
         public PowerplantModel(string name, string type, double efficiency, int pMin, int pMax)
         {
             Name = name;
@@ -36,7 +44,7 @@ namespace Powerplant.Models
         }
 
         /// <summary>
-        /// Verifies if the actual <see cref="PowerplantEntity"/> is Type of <see cref="PowerplantType.Windturbine"/>.
+        /// Verifies if the current powerplant is type of <see cref="PowerplantType.Windturbine"/>.
         /// </summary>
         /// <returns>Return true else false</returns>
         public bool IsWindTurbine()
@@ -45,10 +53,9 @@ namespace Powerplant.Models
         }
 
         /// <summary>
-        /// Calculates and returns the price per MWh of this <see cref="PowerplantEntity"/> 
-        /// based on its <see cref="Type"/>
+        /// Calculates and returns the price per MWh of current powerplant based on its type
         /// </summary>
-        /// <param name="fuel">Input <see cref="FuelEntity"/></param>
+        /// <param name="fuel">Input <see cref="FuelModel"/></param>
         /// <returns>Calculated price in decimal</returns>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public decimal GetProductionPrice(FuelModel fuel)
@@ -64,10 +71,12 @@ namespace Powerplant.Models
 
         /// <summary>
         /// Get the minimum power of the actual power plant.
-        /// If the type is <see cref="PowerplantType.Windturbine"/>, it returns windturbine's actual produced power.
         /// </summary>
         /// <param name="fuel">Input <see cref="FuelEntity"/>, null by default</param>
-        /// <returns>The calculated minimal power of this Powerplant</returns>
+        /// <returns>
+        /// Returns minimal available power of current powerplant.
+        /// If the current powerplant is <see cref="PowerplantType.Windturbine"/>, it will return windturbine's actual produced power.
+        /// </returns>
         /// <exception cref="ArgumentNullException"></exception>
         public double GetMinPower(FuelModel fuel = null)
         {
@@ -77,11 +86,13 @@ namespace Powerplant.Models
         }
 
         /// <summary>
-        /// Get the maximum power of the actual power plant.
-        /// If the type is <see cref="PowerplantType.Windturbine"/>, it returns windturbine's actual produced power.
+        /// Get the maximum power of the current power plant.
         /// </summary>
-        /// <param name="fuel">Input <see cref="FuelEntity"/>, null by default</param>
-        /// <returns>The calculated maximal power of this Powerplant</returns>
+        /// <param name="fuel">Input <see cref="FuelModel"/>, null by default</param>
+        /// <returns>
+        /// Returns maximal available power of current powerplant.
+        /// If the current powerplant is <see cref="PowerplantType.Windturbine"/>, it will return windturbine's actual produced power.
+        /// </returns>
         /// <exception cref="ArgumentNullException"></exception>
         public double GetMaxPower(FuelModel fuel = null)
         {

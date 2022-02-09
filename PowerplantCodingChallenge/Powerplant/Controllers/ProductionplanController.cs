@@ -9,22 +9,25 @@ namespace Powerplant.Controllers
     [ApiController]
     public class ProductionplanController : ControllerBase
     {
-        private readonly IPowerplantService _productionplanService;
+        private readonly IPowerplantService _service;
 
-        public ProductionplanController(IPowerplantService productionplanService)
+        public ProductionplanController(IPowerplantService service)
         {
-            _productionplanService = productionplanService;
+            _service = service;
         }
 
         [HttpPost]
         public IActionResult Post([FromBody] PayloadForm form)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             try
             {
                 // form = Faker.GetPayload(1);
-
-                IEnumerable<ResultModel> results = _productionplanService.ResultCalculation(form);
+                IEnumerable<ResultModel> results = _service.CalculateResult(form);
                 return Ok(results);
             }
             catch (Exception ex)

@@ -5,14 +5,10 @@ namespace Powerplant.Services
 {
     public class PowerplantService : IPowerplantService
     {
-        /// <summary>
-        /// Calculates and generates a list of result from a payload.
-        /// </summary>
-        /// <param name="payload">Takes in the payload</param>
-        /// <returns>Returns a list of results.</returns>
-        public IEnumerable<ResultModel> ResultCalculation(PayloadForm payload)
+        public IEnumerable<ResultModel> CalculateResult(PayloadForm payload)
         {
-            List<ResultModel> output = new();
+            List<ResultModel> output = new List<ResultModel>();
+
             List<PowerplantModel> powerPlants = payload.GetSortedPowerPlants().ToList();
 
             double leftLoad = payload.Load;
@@ -20,9 +16,11 @@ namespace Powerplant.Services
             for (int index = 0; index < powerPlants.Count; index++)
             {
                 PowerplantModel powerPlant = powerPlants[index];
+
                 PowerplantModel nextPowerPlant = index + 1 >= powerPlants.Count ? null : powerPlants[index + 1];
 
                 double pMinOutput = powerPlant.GetMinPower(payload.Fuels);
+
                 double pMaxOutput = powerPlant.GetMaxPower(payload.Fuels);
 
                 double nextPMinOutput = nextPowerPlant is null ? 0 : nextPowerPlant.GetMinPower(payload.Fuels);
@@ -33,21 +31,38 @@ namespace Powerplant.Services
                     {
                         int leftLoadAfterSubstraction = Convert.ToInt32(leftLoad - pMaxOutput);
 
-                        bool listContainsLeftLoadAfterSubstraction = powerPlants.Any(c => leftLoadAfterSubstraction >= c.PMin && leftLoadAfterSubstraction <= c.PMax && !c.IsWindTurbine());
-                        bool listContainsLeftLoad = powerPlants.Any(c => leftLoad >= c.PMin && leftLoad <= c.PMax && !c.IsWindTurbine());
+                        bool listContainsLeftLoadAfterSubstraction = powerPlants.Any(powerplant => leftLoadAfterSubstraction >= powerplant.PMin && leftLoadAfterSubstraction <= powerplant.PMax && !powerplant.IsWindTurbine());
+
+                        bool listContainsLeftLoad = powerPlants.Any(powerplant => leftLoad >= powerplant.PMin && leftLoad <= powerplant.PMax && !powerplant.IsWindTurbine());
 
                         if (listContainsLeftLoadAfterSubstraction && !listContainsLeftLoad)
                         {
-                            output.Add(new(powerPlant.Name, (int)Math.Round(pMaxOutput)));
+                            output.Add(new ResultModel()
+                            {
+                                Name = powerPlant.Name,
+                                P = (int)Math.Round(pMaxOutput)
+                            });
 
                             leftLoad -= (int)Math.Round(pMaxOutput);
                         }
-                        else output.Add(new(powerPlant.Name, 0));
+                        else
+                        {
+                            output.Add(new ResultModel()
+                            {
+                                Name = powerPlant.Name,
+                                P = 0
+                            });
+                        }
                     }
                     else
                     {
                         double temp = leftLoad - nextPMinOutput;
-                        output.Add(new(powerPlant.Name, (int)Math.Round(temp)));
+
+                        output.Add(new ResultModel()
+                        {
+                            Name = powerPlant.Name,
+                            P = (int)Math.Round(temp)
+                        });
 
                         leftLoad -= temp;
                     }
@@ -56,20 +71,32 @@ namespace Powerplant.Services
                 {
                     if (leftLoad - pMaxOutput > 0)
                     {
-                        output.Add(new(powerPlant.Name, (int)Math.Round(pMaxOutput)));
+                        output.Add(new ResultModel()
+                        {
+                            Name = powerPlant.Name,
+                            P = (int)Math.Round(pMaxOutput)
+                        });
 
                         leftLoad -= pMaxOutput;
                     }
                     else
                     {
-                        output.Add(new(powerPlant.Name, (int)Math.Round(leftLoad)));
+                        output.Add(new ResultModel()
+                        {
+                            Name = powerPlant.Name,
+                            P = (int)Math.Round(leftLoad)
+                        });
 
                         leftLoad -= leftLoad;
                     }
                 }
                 else
                 {
-                    output.Add(new(powerPlant.Name, 0));
+                    output.Add(new ResultModel()
+                    {
+                        Name = powerPlant.Name,
+                        P = 0
+                    });
                 }
             }
 
