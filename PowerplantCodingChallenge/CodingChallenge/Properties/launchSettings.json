@@ -4,12 +4,12 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:45424",
+      "applicationUrl": "http://localhost:57835",
       "sslPort": 0
     }
   },
   "profiles": {
-    "Powerplant": {
+    "CodingChallenge": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

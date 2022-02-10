@@ -22,7 +22,7 @@ You have to follow all the steps listed below.
 **3. Build the docker image of the solution**
 
   ```bash
-    docker build -f ".\Powerplant\Dockerfile" --force-rm -t powerplant:latest .
+    docker build -f ".\CodingChallenge\Dockerfile" --force-rm -t powerplant:latest .
   ```
 
 **4. Run the image as a container on port 8888**

@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Powerplant.Models;
-using Powerplant.Models.Forms;
-using Powerplant.Services;
+﻿using CodingChallenge.Models;
+using CodingChallenge.Services;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Powerplant.Controllers
+namespace CodingChallenge.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -17,7 +16,7 @@ namespace Powerplant.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] PayloadForm form)
+        public IActionResult Post([FromBody] Payload form)
         {
             if (!ModelState.IsValid)
             {
@@ -27,7 +26,7 @@ namespace Powerplant.Controllers
             try
             {
                 // form = Faker.GetPayload(1);
-                IEnumerable<ResultModel> results = _service.CalculateResult(form);
+                IEnumerable<Result> results = _service.CalculateResult(form);
                 return Ok(results);
             }
             catch (Exception ex)

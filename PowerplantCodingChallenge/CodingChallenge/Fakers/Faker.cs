@@ -1,7 +1,6 @@
-﻿using Powerplant.Models;
-using Powerplant.Models.Forms;
+﻿using CodingChallenge.Models;
 
-namespace Powerplant.Fakers
+namespace CodingChallenge.Fakers
 {
     public static class Faker
     {
@@ -11,25 +10,25 @@ namespace Powerplant.Fakers
         /// <param name="key">Integer key value</param>
         /// <returns><see cref="PayloadModel"/>Return select payload</returns>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        public static PayloadForm GetPayload(int key)
+        public static Payload GetPayload(int key)
         {
-            Dictionary<int, PayloadForm> payload = new()
+            Dictionary<int, Payload> payload = new()
             {
                 {
                     1,
                     new()
                     {
                         Load = 480,
-                        Fuels = new FuelModel()
+                        Fuels = new Fuel()
                         {
                             Gas = 13.4,
                             Kerosine = 50.8,
                             Co2 = 20,
                             Wind = 60
                         },
-                        Powerplants = new List<PowerplantModel>()
+                        Powerplants = new List<Powerplant>()
                         {
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "gasfiredbig1",
                                 Type = "gasfired",
@@ -37,7 +36,7 @@ namespace Powerplant.Fakers
                                 PMin = 100,
                                 PMax = 460,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "gasfiredbig2",
                                 Type = "gasfired",
@@ -45,7 +44,7 @@ namespace Powerplant.Fakers
                                 PMin = 100,
                                 PMax = 460,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "gasfiredsomewhatsmaller",
                                 Type = "gasfired",
@@ -53,7 +52,7 @@ namespace Powerplant.Fakers
                                 PMin = 40,
                                 PMax = 210,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "tj1",
                                 Type = "turbojet",
@@ -61,7 +60,7 @@ namespace Powerplant.Fakers
                                 PMin = 0,
                                 PMax = 16,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "windpark1",
                                 Type = "windturbine",
@@ -69,7 +68,7 @@ namespace Powerplant.Fakers
                                 PMin = 0,
                                 PMax = 150,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "windpark2",
                                 Type = "windturbine",
@@ -86,16 +85,16 @@ namespace Powerplant.Fakers
                     {
 
                         Load = 480,
-                        Fuels = new FuelModel()
+                        Fuels = new Fuel()
                         {
                             Gas = 13.4,
                             Kerosine = 50.8,
                             Co2 = 20,
                             Wind = 0
                         },
-                        Powerplants = new List<PowerplantModel>()
+                        Powerplants = new List<Powerplant>()
                         {
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "gasfiredbig1",
                                 Type = "gasfired",
@@ -103,7 +102,7 @@ namespace Powerplant.Fakers
                                 PMin = 100,
                                 PMax = 460,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "gasfiredbig2",
                                 Type = "gasfired",
@@ -111,7 +110,7 @@ namespace Powerplant.Fakers
                                 PMin = 100,
                                 PMax = 460,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "gasfiredsomewhatsmaller",
                                 Type = "gasfired",
@@ -119,7 +118,7 @@ namespace Powerplant.Fakers
                                 PMin = 40,
                                 PMax = 210,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "tj1",
                                 Type = "turbojet",
@@ -127,7 +126,7 @@ namespace Powerplant.Fakers
                                 PMin = 0,
                                 PMax = 16,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "windpark1",
                                 Type = "windturbine",
@@ -135,7 +134,7 @@ namespace Powerplant.Fakers
                                 PMin = 0,
                                 PMax = 150,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "windpark2",
                                 Type = "windturbine",
@@ -152,16 +151,16 @@ namespace Powerplant.Fakers
                     {
 
                         Load = 910,
-                        Fuels = new FuelModel()
+                        Fuels = new Fuel()
                         {
                             Gas = 13.4,
                             Kerosine = 50.8,
                             Co2 = 20,
                             Wind = 60
                         },
-                        Powerplants = new List<PowerplantModel>()
+                        Powerplants = new List<Powerplant>()
                         {
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "gasfiredbig1",
                                 Type = "gasfired",
@@ -169,7 +168,7 @@ namespace Powerplant.Fakers
                                 PMin = 100,
                                 PMax = 460,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "gasfiredbig2",
                                 Type = "gasfired",
@@ -177,7 +176,7 @@ namespace Powerplant.Fakers
                                 PMin = 100,
                                 PMax = 460,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "gasfiredsomewhatsmaller",
                                 Type = "gasfired",
@@ -185,7 +184,7 @@ namespace Powerplant.Fakers
                                 PMin = 40,
                                 PMax = 210,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "tj1",
                                 Type = "turbojet",
@@ -193,7 +192,7 @@ namespace Powerplant.Fakers
                                 PMin = 0,
                                 PMax = 16,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "windpark1",
                                 Type = "windturbine",
@@ -201,7 +200,7 @@ namespace Powerplant.Fakers
                                 PMin = 0,
                                 PMax = 150,
                             },
-                            new PowerplantModel()
+                            new Powerplant()
                             {
                                 Name = "windpark2",
                                 Type = "windturbine",

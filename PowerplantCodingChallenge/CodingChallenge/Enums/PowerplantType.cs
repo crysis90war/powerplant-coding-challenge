@@ -1,4 +1,4 @@
-﻿namespace Powerplant.Models.Enums
+﻿namespace CodingChallenge.Models.Enums
 {
     public enum PowerplantType
     {

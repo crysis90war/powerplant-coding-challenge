@@ -1,23 +1,38 @@
-﻿using Powerplant.Extensions;
-using Powerplant.Models.Enums;
+﻿using CodingChallenge.Extensions;
+using CodingChallenge.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace Powerplant.Models
+namespace CodingChallenge.Models
 {
-    public class PowerplantModel
+    public class Powerplant
     {
+        /// <summary>
+        /// Stored the name of this powerplant.
+        /// </summary>
         [Required]
         public string Name { get; set; }
 
+        /// <summary>
+        /// Stored the type of this powerplant.
+        /// </summary>
         [Required]
         public string Type { get; set; }
 
+        /// <summary>
+        /// Stored the efficiency of this powerplant.
+        /// </summary>
         [Required]
         public double Efficiency { get; set; }
 
+        /// <summary>
+        /// Stores the minimal produced power of this powerplant.
+        /// </summary>
         [Required]
         public int PMin { get; set; }
 
+        /// <summary>
+        /// Stores the maximal produced power of this powerplant.
+        /// </summary>
         [Required]
         public int PMax { get; set; }
 
@@ -33,10 +48,10 @@ namespace Powerplant.Models
         /// <summary>
         /// Calculates and returns the price per MWh of current powerplant based on its type.
         /// </summary>
-        /// <param name="fuel">Input <see cref="FuelModel"/></param>
+        /// <param name="fuel">Input <see cref="Fuel"/></param>
         /// <returns>Calculated price in decimal</returns>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        public decimal GetProductionPrice(FuelModel fuel)
+        public decimal GetProductionPrice(Fuel fuel)
         {
             return Type.StringToEnum() switch
             {
@@ -50,13 +65,13 @@ namespace Powerplant.Models
         /// <summary>
         /// Get the minimum power of the current powerplant.
         /// </summary>
-        /// <param name="fuel">Input <see cref="FuelModel"/>, null by default</param>
+        /// <param name="fuel">Input <see cref="Fuel"/></param>
         /// <returns>
         /// Returns minimal available power of current powerplant.
         /// If the current powerplant is <see cref="PowerplantType.Windturbine"/>, it will return windturbine's actual produced power.
         /// </returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public double GetMinPower(FuelModel fuel = null)
+        public double GetMinPower(Fuel fuel)
         {
             return !IsWindTurbine()
                 ? PMin : fuel is not null
@@ -64,15 +79,15 @@ namespace Powerplant.Models
         }
 
         /// <summary>
-        /// Get the maximum power of the current power plant.
+        /// Get the maximum power of the current powerplant.
         /// </summary>
-        /// <param name="fuel">Input <see cref="FuelModel"/>, null by default</param>
+        /// <param name="fuel">Input <see cref="Fuel"/></param>
         /// <returns>
         /// Returns maximal available power of current powerplant.
         /// If the current powerplant is <see cref="PowerplantType.Windturbine"/>, it will return windturbine's actual produced power.
         /// </returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public double GetMaxPower(FuelModel fuel = null)
+        public double GetMaxPower(Fuel fuel)
         {
             return !IsWindTurbine()
                 ? PMax : fuel is not null

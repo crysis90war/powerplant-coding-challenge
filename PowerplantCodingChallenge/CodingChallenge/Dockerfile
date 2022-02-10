@@ -6,16 +6,16 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Powerplant/Powerplant.csproj", "Powerplant/"]
-RUN dotnet restore "Powerplant/Powerplant.csproj"
+COPY ["CodingChallenge/CodingChallenge.csproj", "CodingChallenge/"]
+RUN dotnet restore "CodingChallenge/CodingChallenge.csproj"
 COPY . .
-WORKDIR "/src/Powerplant"
-RUN dotnet build "Powerplant.csproj" -c Release -o /app/build
+WORKDIR "/src/CodingChallenge"
+RUN dotnet build "CodingChallenge.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Powerplant.csproj" -c Release -o /app/publish
+RUN dotnet publish "CodingChallenge.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Powerplant.dll"]
+ENTRYPOINT ["dotnet", "CodingChallenge.dll"]

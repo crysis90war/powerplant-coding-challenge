@@ -1,7 +1,7 @@
 ﻿
-using Powerplant.Models.Enums;
+using CodingChallenge.Models.Enums;
 
-namespace Powerplant.Extensions
+namespace CodingChallenge.Extensions
 {
     public static class PowerplantExtension
     {

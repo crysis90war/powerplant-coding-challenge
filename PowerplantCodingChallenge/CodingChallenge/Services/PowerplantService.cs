@@ -1,25 +1,24 @@
-﻿using Powerplant.Models;
-using Powerplant.Models.Forms;
+﻿using CodingChallenge.Models;
 
-namespace Powerplant.Services
+namespace CodingChallenge.Services
 {
     public class PowerplantService : IPowerplantService
     {
-        public IEnumerable<ResultModel> CalculateResult(PayloadForm payload)
+        public IEnumerable<Result> CalculateResult(Payload payload)
         {
-            List<ResultModel> output = new List<ResultModel>();
+            List<Result> output = new List<Result>();
 
-            List<PowerplantModel> powerPlants = payload.GetSortedPowerPlants().ToList();
+            List<Powerplant> powerPlants = payload.GetSortedPowerPlants().ToList();
 
             double leftLoad = payload.Load;
 
             for (int index = 0; index < powerPlants.Count; index++)
             {
-                PowerplantModel powerPlant = powerPlants[index];
+                Powerplant powerPlant = powerPlants[index];
 
-                PowerplantModel nextPowerPlant = index + 1 >= powerPlants.Count ? null : powerPlants[index + 1];
+                Powerplant nextPowerPlant = index + 1 >= powerPlants.Count ? null : powerPlants[index + 1];
 
-                ResultModel result = new ResultModel()
+                Result result = new Result()
                 {
                     Name = powerPlant.Name
                 };

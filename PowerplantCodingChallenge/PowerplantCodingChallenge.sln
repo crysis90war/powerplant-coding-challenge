@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerplant", "Powerplant\Powerplant.csproj", "{73AF254F-8C7F-4023-8193-71DBDB525E39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge", "CodingChallenge\CodingChallenge.csproj", "{FA3CD230-9388-481A-80C3-FD6824825A53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{73AF254F-8C7F-4023-8193-71DBDB525E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73AF254F-8C7F-4023-8193-71DBDB525E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73AF254F-8C7F-4023-8193-71DBDB525E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73AF254F-8C7F-4023-8193-71DBDB525E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA3CD230-9388-481A-80C3-FD6824825A53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA3CD230-9388-481A-80C3-FD6824825A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA3CD230-9388-481A-80C3-FD6824825A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA3CD230-9388-481A-80C3-FD6824825A53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

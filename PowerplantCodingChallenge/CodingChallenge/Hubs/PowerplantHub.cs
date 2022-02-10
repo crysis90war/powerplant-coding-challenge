@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
-using Powerplant.Models;
+using CodingChallenge.Models;
 
-namespace Powerplant.Hubs
+namespace CodingChallenge.Hubs
 {
     public class PowerplantHub : Hub
     {
@@ -10,7 +10,7 @@ namespace Powerplant.Hubs
         /// </summary>
         /// <param name="result">List of results</param>
         /// <returns>Return list of results to all connected clients.</returns>
-        public Task SendResult(IEnumerable<ResultModel> result)
+        public Task SendResult(IEnumerable<Result> result)
         {
             return Clients.All.SendAsync("ReceiveResult", result);
         }
